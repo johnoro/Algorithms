@@ -17,6 +17,7 @@ def rock_paper_scissors(n, moves=[[[]]]):
 
   return moves[n]
 
+
 if __name__ == "__main__":
   if len(sys.argv) > 1:
     num_plays = int(sys.argv[1])
