@@ -3,7 +3,17 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  batches = None
+  for k, v in recipe.items():
+    if k in ingredients and ingredients[k] >= v:
+      available = ingredients[k] // v
+      if batches is None:
+        batches = available
+      elif available < batches:
+        batches = available
+    else:
+      return 0
+  return batches
 
 
 if __name__ == '__main__':
