@@ -18,7 +18,7 @@ def knapsack_solver(items, capacity):
   best['Chosen'].sort()
   return best
 
-  # passes the tests
+  # a model solution that passes the tests
   # """
   # Correct but very memory inefficient solution, can only solve problems where
   # computer memory is at least number of items times capacity time 8bytes large
