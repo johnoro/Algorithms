@@ -7,7 +7,7 @@ import sys
 # recursive solution
 def eating_cookies(n, cache=[]):
   if n < 0:
-    return 1
+    return eating_cookies(abs(n))
   ways = [1, 1, 2]
   i = curr = len(ways) - 1
   if n <= i:

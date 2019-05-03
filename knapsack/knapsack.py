@@ -1,12 +1,22 @@
 #!/usr/bin/python
 
 import sys
+import csv
 from collections import namedtuple
 
 Item = namedtuple('Item', ['index', 'size', 'value'])
 
 def knapsack_solver(items, capacity):
-  pass
+  total_weight = 0
+  best = {'Value': 0, 'Chosen': []}
+  for item in sorted(items, key=lambda i: i.value / i.size )[::-1]:
+    index, weight, value = item
+    if weight + total_weight <= capacity:
+      best['Value'] += value
+      best['Chosen'].append(index)
+      total_weight += weight
+  best['Chosen'].sort()
+  return best
   
 
 if __name__ == '__main__':
